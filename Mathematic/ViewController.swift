@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     @IBAction func numberButonTapped(_ sender: UIButton) {
         guard let char = sender.titleLabel?.text else { return }
         guard let answer = answerLabel.text else { return }
-        answerLabel.text = answer + char
+        answerLabel.text = char == "-" ? answer.first == "-" ? String(answer.dropFirst()) : char + answer : answer + char
         checkButton.isEnabled = true
     }
     
